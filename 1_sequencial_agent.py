@@ -62,6 +62,7 @@ fact_checking_task = Task(
     description=config["tasks"]["fact_checking_task"]["description"],
     agent=fact_checker_agent,
     expected_output=config["tasks"]["fact_checking_task"]["expected_output"],
+    output_file='output/1_sequencial_agent.md'
 )
 
 research_crew = Crew(
@@ -73,5 +74,4 @@ research_crew = Crew(
 
 result = research_crew.kickoff(inputs={"topic": "Water usage in training chatgpt o3"})
 print("\n Final verified summary:\n",result)
-
 

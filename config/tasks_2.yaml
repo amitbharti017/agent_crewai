@@ -1,0 +1,36 @@
+research_task:
+    description: >
+        Use the SerperDevTool to find the most relevant and 
+        recent data on {topic}.
+    agent: research_agent
+    expected_output: >
+        A detailed research report with key insights and 
+        source references.
+    verbose: true
+
+summarization_task:
+    description: >
+        Summarize the research findings into a well-structured, 
+        concise report.
+    agent: summarization_agent
+    expected_output: >
+        A summary highlighting the key takeaways from the research.
+    verbose: true
+
+fact_checking_task:
+    description: >
+        Cross-check the summarized information for accuracy and 
+        remove any misleading claims. Provide the output in the format
+            title: str
+            introduction: str
+            key_findings: List[str]
+            estimated_water_usage: List[str]
+            factors_influencing_water_usage: List[str]
+            mitigation_strategies: List[str]
+            contradictory_information: str
+            source_references: List[SourceReference]
+            conclusion: str
+    agent: fact_checker_agent
+    expected_output: >
+        A fact-checked and verified research summary.
+    verbose: true
